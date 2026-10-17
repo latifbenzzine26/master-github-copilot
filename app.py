@@ -1,12 +1,11 @@
 import re
 
-def slugify(text: str) -> str:
+def slugify(raw_text: str) -> str:
     """
-    Convert *text* into a lowercase dash-separated slug.
+    Convert *source_text* into a lowercase dash-separated slug.
     Keeps alphanumerics, converts spaces & punctuation to '-',
     collapses consecutive dashes.
     """
-    text = text.lower()
-    text = re.sub(r"[^a-z0-9]+", "-", text)
-    return re.sub(r"-{2,}", "-", text).strip("-")
-    
+    source_text = source_text.lower()
+    source_text = re.sub(r"[^a-z0-9]+", "-", source_text)
+    return re.sub(r"-{2,}", "-", source_text).strip("-")
