@@ -30,3 +30,4 @@ def masked_email(e, show=2):
     lp, dom = e.split("@")
     masked = lp[:show] + "*" * (len(lp) - show)
     return masked + "@" + dom
+    
